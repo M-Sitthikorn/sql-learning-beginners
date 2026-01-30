@@ -1,6 +1,28 @@
 # sql-learning-beginners
+[sql](https://www.youtube.com/watch?v=SSKVgrwhzus&t=9053s)
+## RULE FOR SQL LANGUAGE 
+1.   ความไม่แตกต่างระหว่างตัวพิมพ์เล็กและตัวพิมพ์ใหญ่ `(Case-insensitive)`
+    - การใช้ตัวพิมพ์เล็กหรือใหญ่ไม่มีผลต่อการทำงานของคำสั่ง
+    - ข้อยกเว้น: ข้อความที่อยู่ภายในเครื่องหมายคำพูด `''` หรือ `""` จะถือว่ามีความแตกต่าง เช่น `'USA'`, `'McDonalsd'`
+2. การเขียนคำสั่ง (Clauses และ Keywords)
+    - ให้เขียน SQL Clauses และ Keywords ด้วย ตัวพิมพ์ใหญ่ เพื่อความชัดเจนและมาตรฐาน
+    - ตัวอย่าง: 
+```sql
+SELECT name, country 
+FROM customers
+WHERE country = 'USA';
+```
 
-## 1. Key SQL Terminology
+3. การเขียนหลายคำสั่ง (`Multiple Queries`)
+    - หากมีการเขียนมากกว่าหนึ่งคำสั่งในหน้าต่าง editor ต้องใส่เครื่องหมาย ; (semicolon) หลังแต่ละคำสั่ง
+    - เครื่องหมาย ; ทำหน้าที่เหมือนเครื่องหมายจุด (.) ในประโยคภาษาอังกฤษ เพื่อบ่งบอกว่าคำสั่งสิ้นสุดแล้ว
+    - ตัวอย่าง: 
+```sql
+SELECT * FROM employees;
+SELECT * FROM departments;
+```
+
+
 
 ### 1.1 DML - Data Manipulation Language
 
@@ -54,4 +76,21 @@
 - `GROUP BY` (จัดกลุ่ม?)
 - `HAVING` (กรองกลุ่ม?)
 - `ORDER BY` (เรียงลำดับ?)
-- `LIMIT / OFFSET` (จะเอาไปแสดงกี่แถว?)
+- `LIMIT / OFFSET` (จะเอาไปแสดงกี่แถว)
+
+
+```sql 
+SELECT 
+    c.id,
+    c.first_name,
+    c.order_id,
+    o.sales
+FROM customers AS c
+INNER JOIN orders AS o
+ON c.id = o.customer_id
+
+```
+
+
+
+
