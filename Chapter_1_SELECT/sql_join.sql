@@ -135,6 +135,20 @@ SELECT * FROM customers
 LEFT JOIN orders 
 ON customers.id = orders.customer_id;
 
+-- LEFT JOIN 
+-- id, first_name, order_id sales
+SELECT 
+    c.id,
+    c.first_name,
+    o.customer_id,
+    o.sales
+FROM customers AS c
+LEFT JOIN orders AS o
+ON c.id = c.customer_id;
+
+
+
+
 
 
 -- FULL JOIN 
