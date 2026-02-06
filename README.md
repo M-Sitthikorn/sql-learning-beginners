@@ -94,3 +94,49 @@ ON c.id = o.customer_id
 
 
 
+ดึงรายการคำสั่งซื้อทั้งหมด พร้อมชื่อสินค้า และชื่อลูกค้าที่สั่งซื้อ
+ให้แสดง: OrderID, OrderDate, Product, CustomerName
+
+ดึงรายการคำสั่งซื้อ พร้อมชื่อพนักงานที่รับผิดชอบการขาย และประเทศของลูกค้า
+ให้แสดง: OrderID, EmployeeName, CustomerName, Country
+
+
+ดึงข้อมูลคำสั่งซื้อ พร้อมราคาและจำนวนสินค้า รวมยอดขาย (Sales)
+ให้แสดง: OrderID, Product, Price, Quantity, Sales
+
+
+ดึงข้อมูลคำสั่งซื้อ พร้อมชื่อสินค้า, ลูกค้า, และพนักงานขาย
+ให้แสดง: OrderID, Product, CustomerName, EmployeeName, OrderDate
+
+
+ดึงข้อมูลคำสั่งซื้อที่สถานะเป็น "Shipped" พร้อมรายละเอียดลูกค้าและที่อยู่จัดส่ง
+ให้แสดง: OrderID, CustomerName, Country, ShipAddress, ShipDate
+
+ดึงรายการคำสั่งซื้อทั้งหมด พร้อมชื่อสินค้า แม้บางคำสั่งซื้ออาจไม่มีสินค้าที่ match
+ให้แสดง: OrderID, OrderDate, Product
+
+
+ดึงรายการคำสั่งซื้อทั้งหมด พร้อมข้อมูลลูกค้า แม้บางคำสั่งซื้ออาจไม่มีลูกค้าในระบบ
+ให้แสดง: OrderID, CustomerName, Country
+
+
+ดึงรายการคำสั่งซื้อทั้งหมด พร้อมข้อมูลพนักงานขาย แม้บางคำสั่งซื้ออาจไม่มีพนักงานที่รับผิดชอบ
+ให้แสดง: OrderID, EmployeeName, Department
+
+ดึงคำสั่งซื้อทั้งหมด พร้อมสินค้าและลูกค้า แม้บางคำสั่งซื้อจะไม่มีข้อมูลสินค้า หรือไม่มีข้อมูลลูกค้า ให้แสดง: OrderID, Product, CustomerName
+
+ดึงคำสั่งซื้อทั้งหมด พร้อมข้อมูลสินค้า ลูกค้า และพนักงานขาย โดยใช้ LEFT JOIN ทุกตาราง
+ให้แสดง: OrderID, Product, CustomerName, EmployeeName
+
+
+```sql
+SELECT CustomerID
+ FROM Customers_2024
+
+UNION
+
+SELECT CustomerID 
+FROM Customers_2025;
+
+```
+
